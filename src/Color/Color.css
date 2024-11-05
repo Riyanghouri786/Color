@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: white;
+  width: 100px;
+  height: 150px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.box {
+  width: 90px;
+  height: 110px;
+  background-color: red;
+  border-radius: 5px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.form button {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.containor {
+  display: flex;
+  gap: 10px;
+  width: 1000px;
+  overflow: auto;
+  padding: 10px;
+  position: relative;
+  scroll-snap-type: x mandatory; /* Smooth snapping */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.containor::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+/* Adding fade effect at the edges */
+.containor::before,
+.containor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* For smooth snapping of items */
+.item {
+  scroll-snap-align: start;
+}
